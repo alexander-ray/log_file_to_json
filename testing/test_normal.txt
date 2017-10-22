@@ -1,0 +1,15 @@
+[INFO]   [20170901   135729]   [index.go:125]   Starting   search
+[ERROR] [20170901   135729]   [index.go:125]   Starting   search
+[INFO] [20107901 136729] [index.go:125] Starting    search
+[INFO]   [20170901   135839]   [index.go:125]   Starting   search
+[INFO]   [20170901   135729]   [index.go:125]   Starting   sch
+[TRACE]   [20170901   145729]   [index.go:125998473]   Starting   sch
+[INFO]   [20190901   135729]   [index.go:125]   Starting search
+
+
+[TRACE]   [20170901   145729]   [index.go:125998473]   Starting   schoocl
+[TRACE]   [20170901   145729]   [index.go:125998473]   Starting   schde
+[INFO]   [20170901   145729]   [index.go:12573]   Starting   sch
+[ERROR] [20170902   135729]   [ingo:1] Finalh
+[ERROR] [20170902   135729]   [ingo:1] Finalh
+[ERROR] [20170902   135729]   [ingo:1] Finalh

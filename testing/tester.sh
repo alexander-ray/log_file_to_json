@@ -49,3 +49,8 @@ echo "test_ok_complicated"
 expect=`cat test_ok_complicated.ans`
 got=`python3 ../log_to_json.py -l TRACE -d -f test_ok_complicated.txt`
 diff <( echo "$expect" ) <( echo "$got" )
+
+echo "test_normal"
+expect=`cat test_normal.ans`
+got=`python3 ../log_to_json.py -f test_normal.txt`
+diff <( echo "$expect" ) <( echo "$got" )
