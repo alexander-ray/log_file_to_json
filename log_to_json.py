@@ -4,6 +4,7 @@ import json
 import json_parser
 import helper
 def main():
+    # Initial declarations
     h = helper.Helper()
     filename = ''
     levels = ["TRACE", "DEBUG", "INFO", "WARN", "ERROR"]
@@ -12,7 +13,10 @@ def main():
     default_level = True
     file_included = False
     d_flag = False
+
+    # Get arguments
     try:
+        # d doesn't have arg, f & l do
         opts, args = getopt.getopt(sys.argv[1:], 'df:l:')
         for o, a in opts:
             if o == "-f":
@@ -22,6 +26,7 @@ def main():
                 d_flag = True
             if o == "-l":
                 default_level = False
+                # Cut levels list to relevant levels
                 try:
                     levels = levels[levels.index(a.upper()):]
                 except ValueError:
@@ -32,9 +37,11 @@ def main():
         print(e)
         sys.exit(2)
 
+    # Cut TRACE and DEBUG if unspecified
     if (default_level):
         levels = levels[levels.index("INFO"):]
 
+    # Initialize parser with key list
     jp = json_parser.Json_Parser(keys)
     try:
         jp.parse_file(filename, levels)
@@ -44,10 +51,17 @@ def main():
         else:
             filtered = h.remove_concecutive_dups(jp.parsed_lines, ["timestamp"])
 
+        # Print all elements in filtered list
         for d in filtered:
             print(json.dumps(d))
+    # If exception is raised, print all lines already parsed
     except Exception as e:
-        for d in jp.parsed_lines:
+        filtered = []
+        if (d_flag):
+            filtered = h.remove_all_dups(jp.parsed_lines, ["timestamp"])
+        else:
+            filtered = h.remove_concecutive_dups(jp.parsed_lines, ["timestamp"])
+        for d in filtered:
             print(json.dumps(d))
         print(e)
         sys.exit(2)
