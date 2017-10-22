@@ -4,9 +4,9 @@
 * Clone repo onto local system
 * Run log_to_json.py with necessary command line arguments
   * *python3* (on a \*nix system, run like `python3 /path/to/log_to_json.py -l TRACE -d -f /other/path/to/test_ok_complicated.txt`)
-  * All `*.py` files must be kept in same directory
 * To run tests, run `./tester.sh` from *testing* subdirectory. Tests rely on existing directory structure.
   * If permissions aren't set, run `chmod 755 tester.sh`
+* The python files can be placed anywhere on the system (however, they must be kept in the same directory). Log files can be anywhere on the system, as long as the correct relative or absolute file path is given when running the program.
   
 ### List of libraries
 * `sys`
