@@ -1,0 +1,3 @@
+[INFO]   [20170901   135729]   [index.go:125]   Starting   search
+[ERROR] [20170901   135729]   [index.go:125]Starting   search
+[INFO] [20107901136729 [index.go:125] Starting    search

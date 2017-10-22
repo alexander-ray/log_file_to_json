@@ -33,6 +33,11 @@ expect=`cat test_empty_line.ans`
 got=`python3 ../log_to_json.py -f test_empty_line.txt`
 diff <( echo "$expect" ) <( echo "$got" )
 
+echo "test_garbled_line"
+expect=`cat test_garbled_line.ans`
+got=`python3 ../log_to_json.py -f test_garbled_line.txt`
+diff <( echo "$expect" ) <( echo "$got" )
+
 echo "test_ok_single_line"
 expect=`cat test_ok_single_line.ans`
 got=`python3 ../log_to_json.py -f test_ok_single_line.txt`

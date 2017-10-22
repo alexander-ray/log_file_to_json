@@ -18,11 +18,8 @@ class Json_Parser:
 
     def parse_file(self, filename, levels):
         try:
-            try:
-                f = open(filename, 'r')
-                lines = f.readlines()
-            except Exception as e:
-                raise
+            f = open(filename, 'r')
+            lines = f.readlines()
 
             for line in lines:
                 # Checking against empty line
@@ -42,20 +39,19 @@ class Json_Parser:
                 else:
                     values.append(fields[0])
 
-                try:
-                    # Add formatted timestamp
-                    values.append(self.__timestamp_to_string(fields[1], fields[2]))
-                    # Add filename
-                    # Assume valid
-                    values.append(fields[3])
+                # Add formatted timestamp
+                values.append(self.__timestamp_to_string(fields[1], fields[2]))
+                # Add filename
+                # Assume valid
+                values.append(fields[3])
 
-                    # Add line number, if valid
-                    tmp = int(fields[4])
-                    if (tmp <= 0):
-                        raise RuntimeError("Error: Invalid line number")
-                    values.append(tmp)
-                except Exception as e:
-                    raise
+                # Add line number, if valid
+                if (not fields[4].isdigit()):
+                    raise RuntimeError("Error: Invalid line number")
+                tmp = int(fields[4])
+                if (tmp <= 0):
+                    raise RuntimeError("Error: Invalid line number")
+                values.append(tmp)
 
                 # Append log message
                 values.append(' '.join(fields[5:]))
