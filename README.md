@@ -13,7 +13,7 @@
 * `getopt`
   * Greatly simplifies handling of command line arguments. Built in error handling. Additionally, because it functions the same as C's `getopt`, the handling of command line arguments will be familiar to most.
 * `OrderedDict`
-  * I chose to use python dictionaries over some other data structure because they are naturally very similar to JSON in structure (and method of printing) and dictionaries are very "pythonic". Built-in python dictionaries do no maintain key ordering and instead use their ordering post-hashing. `OrderedDict` was necessary to ensure key-value pairs remain in the proper order (e.g. "level" comes before "timestamp").
+  * I chose to use python dictionaries over some other data structure because they are naturally very similar to JSON in structure (and method of printing) and dictionaries are very "pythonic". Built-in python dictionaries do not maintain key ordering and instead use their ordering post-hashing. `OrderedDict` was necessary to ensure key-value pairs remain in the proper order (e.g. "level" comes before "timestamp").
 * `json`
   * I used the `json` library for the `json.dumps()` function, which makes it easy to convert & print json. Furthermore, `json.dumps()` prints python dictionaries as JSON. I could have simply printed the dictionaries mostly as-is, but the json library provides nice "pretty-print" options that are useful for debugging.
   
