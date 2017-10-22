@@ -1,0 +1,3 @@
+{"level": "INFO", "timestamp": "2017-09-01 13:57:29", "file": "index.go", "line": 125, "message": "Starting search"}
+{"level": "ERROR", "timestamp": "2017-09-01 13:57:29", "file": "index.go", "line": 125, "message": "Starting search"}
+{"level": "INFO", "timestamp": "2017-09-01 13:57:29", "file": "index.go", "line": 125, "message": "Starting sch"}

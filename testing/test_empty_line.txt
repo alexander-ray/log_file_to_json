@@ -1,0 +1,6 @@
+[INFO]   [20170901   135729]   [index.go:125]   Starting   search
+
+[INFO]   [20170901   135729]   [index.go:125]   Starting   search
+
+[INFO]   [20170901   135729]   [index.go:125]   Starting   search
+

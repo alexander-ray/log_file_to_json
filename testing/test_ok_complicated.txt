@@ -1,0 +1,7 @@
+[INFO]   [20170901   135729]   [index.go:125]   Starting   search
+[ERROR] [20170901   135729]   [index.go:125]   Starting   search
+[INFO] [20107901 136729] [index.go:125] Starting    search
+[INFO]   [20170901   135839]   [index.go:125]   Starting   search
+[INFO]   [20170901   135729]   [index.go:125]   Starting   sch
+[TRACE]   [20170901   145729]   [index.go:125998473]   Starting   sch
+[INFO]   [20190901   135729]   [index.go:125]   Starting search

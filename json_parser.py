@@ -18,39 +18,50 @@ class Json_Parser:
         return ret
 
     def parse_file(self, filename, levels):
-        f = open(filename, 'r')
-        lines = f.readlines()
-
-        for line in lines:
-            values = []
-            # Setting up list of words
-            line = line.replace('[', '')
-            line = line.replace(']', '')
-            line = line.replace(':', ' ')
-            fields = line.split() # String to list
-
-            # Skip entry if not in specified level set
-            if (fields[0] not in levels):
-                continue
-            else:
-                values.append(fields[0])
-
+        try:
             try:
-                # Add formatted timestamp
-                values.append(self.__timestamp_to_string(fields[1], fields[2]))
-                # Add filename
-                # Assume valid
-                values.append(fields[3])
-
-                # Add line number, if valid
-                tmp = int(fields[4])
-                if (tmp <= 0):
-                    raise RuntimeError("Error: Invalid line number")
-                values.append(fields[4])
+                f = open(filename, 'r')
+                lines = f.readlines()
             except Exception as e:
                 raise
 
-            # Append log message
-            values.append(' '.join(fields[5:]))
-            # Add OrderedDict of full log entry
-            self.parsed_lines.append(OrderedDict(zip(self.keys, values)))
+            for line in lines:
+                # Checking against empty line
+                if (not line.strip()):
+                    continue
+
+                values = []
+                # Setting up list of words
+                line = line.replace('[', '')
+                line = line.replace(']', '')
+                line = line.replace(':', ' ')
+                fields = line.split() # String to list
+
+                # Skip entry if not in specified level set
+                if (fields[0] not in levels):
+                    continue
+                else:
+                    values.append(fields[0])
+
+                try:
+                    # Add formatted timestamp
+                    values.append(self.__timestamp_to_string(fields[1], fields[2]))
+                    # Add filename
+                    # Assume valid
+                    values.append(fields[3])
+
+                    # Add line number, if valid
+                    tmp = int(fields[4])
+                    if (tmp <= 0):
+                        raise RuntimeError("Error: Invalid line number")
+                    values.append(tmp)
+                except Exception as e:
+                    raise
+
+                # Append log message
+                values.append(' '.join(fields[5:]))
+                # Add OrderedDict of full log entry
+                self.parsed_lines.append(OrderedDict(zip(self.keys, values)))
+
+        except Exception as e:
+            raise
