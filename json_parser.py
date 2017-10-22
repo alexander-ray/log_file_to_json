@@ -1,5 +1,4 @@
 import sys
-import re # Regex
 from collections import OrderedDict
 
 class Json_Parser:

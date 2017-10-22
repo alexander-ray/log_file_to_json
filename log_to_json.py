@@ -1,38 +1,10 @@
 import sys, getopt
 import json
+
 import json_parser
-#from functools import reduce
-
-def check_dict_equality(d1, d2, ignore_key):
-    ret = {k: v for k,v in d1.items() if k not in ignore_key} == {k: v for k,v in d2.items() if k not in ignore_key}
-    return ret
-
-def remove_concecutive_dups(d, ignore_key):
-    l = len(d)
-    if (l > 1):
-        for i in reversed(range(1, l)):
-            print(check_dict_equality(d[i], d[i - 1], ignore_key))
-            if check_dict_equality(d[i], d[i - 1], ignore_key):
-                del d[i]
-    return d
-
-def remove_all_dups(d, ignore_key):
-    seen = []
-    ret = []
-    for e in d:
-        dup = False
-        for s in seen:
-            if ({k: v for k,v in e.items() if k not in ignore_key} ==
-                {k: v for k,v in s.items() if k not in ignore_key}):
-                dup = True
-                break;
-        if (dup):
-            continue
-        seen.append(e)
-        ret.append(e)
-    return ret
-
+import helper
 def main():
+    h = helper.Helper()
     filename = ''
     levels = ["TRACE", "DEBUG", "INFO", "WARN", "ERROR"]
     keys = ["level", "timestamp", "file", "line", "message"]
@@ -68,9 +40,9 @@ def main():
         jp.parse_file(filename, levels)
         filtered = []
         if (d_flag):
-            filtered = remove_all_dups(jp.parsed_lines, ["timestamp"])
+            filtered = h.remove_all_dups(jp.parsed_lines, ["timestamp"])
         else:
-            filtered = remove_concecutive_dups(jp.parsed_lines, ["timestamp"])
+            filtered = h.remove_concecutive_dups(jp.parsed_lines, ["timestamp"])
 
         for d in filtered:
             print(json.dumps(d))
