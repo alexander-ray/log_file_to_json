@@ -20,6 +20,8 @@
 ### Testing overview
 Instead of using the normal python `unittest` framework, I chose to use a lightweight shell script for testing. I chose this testing route because a shell script makes testing the full program (including command line arguments) much more simple in structure and amount of code. This shell script compares command output with the contents of a `*.ans` file using `diff`. If the outputs are the same, nothing is printed; if the outputs are different, `diff` shows exactly what is different (just like `unittest` does). 
 
+I am reasonably confident my solution works as intended. It is important to note that my tests are not comprehensive; in the interest of time, 
+
 ### Assumptions
 * I assume that the different log sections will be separated by one or more spaces, where all numbers of spaces >1 are treated equally.
   * Furthermore, I do not maintain spacing in the log message. E.g. "Spacing &nbsp; &nbsp; &nbsp; test" and "Spacing test" will be considered equal and output as "Spacing test".
@@ -28,10 +30,10 @@ Instead of using the normal python `unittest` framework, I chose to use a lightw
 ### Example program output
 `alexray$ python3 log_to_json.py -l TRACE -d -f ./testing/test_ok_complicated.txt`
 
-{"level": "INFO", "timestamp": "2017-09-01 13:57:29", "file": "index.go", "line": 125, "message": "Starting search"}
+`{"level": "INFO", "timestamp": "2017-09-01 13:57:29", "file": "index.go", "line": 125, "message": "Starting search"}`
 
-{"level": "ERROR", "timestamp": "2017-09-01 13:57:29", "file": "index.go", "line": 125, "message": "Starting search"}
+`{"level": "ERROR", "timestamp": "2017-09-01 13:57:29", "file": "index.go", "line": 125, "message": "Starting search"}`
 
-{"level": "INFO", "timestamp": "2017-09-01 13:57:29", "file": "index.go", "line": 125, "message": "Starting sch"}
+`{"level": "INFO", "timestamp": "2017-09-01 13:57:29", "file": "index.go", "line": 125, "message": "Starting sch"}`
 
-{"level": "TRACE", "timestamp": "2017-09-01 14:57:29", "file": "index.go", "line": 125998473, "message": "Starting sch"}
+`{"level": "TRACE", "timestamp": "2017-09-01 14:57:29", "file": "index.go", "line": 125998473, "message": "Starting sch"}`
