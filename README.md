@@ -24,7 +24,7 @@ Instead of using the normal python `unittest` framework, I chose to use a lightw
 I am reasonably confident my solution works as intended. I'm certain my program meets the requirements specified and will function correctly in reasonably expected scenarios. Undoubtedly corner cases exist in which the program would fail, because the tests are by no means comprehensive. Given additional time, additional tests could be created to increase the confidence level.
 
 ### Assumptions
-* I assume that the different log sections will be separated by one or more spaces, where all numbers of spaces >1 are treated equally.
+* I assume that the different log sections will be separated by one or more spaces, where all numbers of spaces >=1 are treated equally.
   * Furthermore, I do not maintain spacing in the log message. E.g. "Spacing &nbsp; &nbsp; &nbsp; test" and "Spacing test" will be considered equal and output as "Spacing test".
 * I assume the filenames in the log messages are valid. Technically, each OS has a couple invalid filename characters as well as a character limit, but I chose to assume validity.
 
