@@ -1,12 +1,13 @@
 import sys
 import re # Regex
+from collections import OrderedDict
 
 class Json_Parser:
     def __init__(self, keys):
         self.keys = keys
         self.parsed_lines = []
 
-    def __timestamp_to_string(date, time):
+    def __timestamp_to_string(self, date, time):
         if (not date.isdigit() or len(date) != 8)
             raise RuntimeError("Invalid date")
         elif (not time.isdigit() or len(time) != 6)
@@ -15,7 +16,7 @@ class Json_Parser:
         return "%s-%s-%s %s:%s:%s" %
             (date[0:4], date[4:6], date[6,8], time[0:2], time[2:4], time[4:6])
 
-    def parse_file(filename, levels, line_parser):
+    def parse_file(self, filename, levels):
         f = open(filename, 'r')
         lines = f.readlines()
 
