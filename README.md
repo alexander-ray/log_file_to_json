@@ -22,4 +22,4 @@ Instead of using the normal python `unittest` framework, I chose to use a lightw
 
 ### Assumptions
 * I assume that the different log sections will be separated by one or more spaces, where all numbers of spaces >1 are treated equally.
- * Furthermore, I do not maintain spacing in the log message. E.g. "Spacing     test" and "Spacing test" will be considered equal and outputted as "Spacing test".
+  * Furthermore, I do not maintain spacing in the log message. E.g. "Spacing     test" and "Spacing test" will be considered equal and outputted as "Spacing test".
