@@ -1,4 +1,3 @@
-import sys
 from collections import OrderedDict
 
 class Json_Parser:
