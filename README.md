@@ -27,6 +27,7 @@ I am reasonably confident my solution works as intended. I'm certain my program 
 * I assume that the different log sections will be separated by one or more spaces, where all numbers of spaces >=1 are treated equally.
   * Furthermore, I do not maintain spacing in the log message. E.g. "Spacing &nbsp; &nbsp; &nbsp; test" and "Spacing test" will be considered equal and output as "Spacing test".
 * I assume the filenames in the log messages are valid. Technically, each OS has a couple invalid filename characters as well as a character limit, but I chose to assume validity.
+* I assume JSON is to be output with a space between colon and value.
 
 ### Example program output
 `alexray$ python3 log_to_json.py -l TRACE -d -f ./testing/test_ok_complicated.txt`
