@@ -19,3 +19,7 @@
   
 ### Testing overview
 Instead of using the normal python `unittest` framework, I chose to use a lightweight shell script for testing. This shell script compares command output with the contents of a `*.ans` file using `diff`. If the outputs are the same, nothing is printed; if the outputs are different, `diff` shows exactly what is different (just like `unittest` does). I chose this testing route because a shell script makes testing the full program (including command line arguments) much more simple in structure and amount of code.
+
+### Assumptions
+* I assume that the different log sections will be separated by one or more spaces, where all numbers of spaces >1 are treated equally.
+ * Furthermore, I do not maintain spacing in the log message. E.g. "Spacing     test" and "Spacing test" will be considered equal and outputted as "Spacing test".
