@@ -4,6 +4,7 @@
 * Clone repo onto local system
 * Run log_to_json.py with necessary command line arguments
   * *python3* (on a \*nix system, run like `python3 /path/to/log_to_json.py -l TRACE -d -f /other/path/to/test_ok_complicated.txt`)
+  * All `*.py` files must be kept in same directory
 * To run tests, run `./tester.sh` from *testing* subdirectory. Tests rely on existing directory structure.
   * If permissions aren't set, run `chmod 755 tester.sh`
   
