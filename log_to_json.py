@@ -19,11 +19,14 @@ def main():
         # d doesn't have arg, f & l do
         opts, args = getopt.getopt(sys.argv[1:], 'df:l:')
         for o, a in opts:
+            # Filename checker
             if o == "-f":
                 file_included = True
                 filename = a
+            # Global repeats checker
             if o == "-d":
                 d_flag = True
+            # Level specifier checker
             if o == "-l":
                 default_level = False
                 # Cut levels list to relevant levels

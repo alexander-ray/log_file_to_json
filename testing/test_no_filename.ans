@@ -1,0 +1,4 @@
+Error: filename argument required. 
+Specify file path with -f. 
+Specify minimum level with -l. 
+Specify no repeated messages with -d.

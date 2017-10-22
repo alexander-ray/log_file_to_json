@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "test_no_filename"
-expect="Error: filename argument required"
+expect=`cat test_no_filename.ans`
 got=`python3 ../log_to_json.py`
 diff <( echo "$expect" ) <( echo "$got" )
 

@@ -1,5 +1,5 @@
 class Helper:
-    # Compare dicts without "timestamp" key
+    # Compare dicts not including "timestamp" key
     def __check_dict_equality(self, d1, d2, ignore_key):
         ret = {k: v for k,v in d1.items() if k not in ignore_key} == {k: v for k,v in d2.items() if k not in ignore_key}
         return ret
@@ -10,6 +10,7 @@ class Helper:
         if (l > 1):
             # Iterate backwards, removing elements as necessary
             for i in reversed(range(1, l)):
+                # If equal, delete ith element
                 if self.__check_dict_equality(d[i], d[i - 1], ignore_key):
                     del d[i]
         return d
@@ -28,6 +29,7 @@ class Helper:
                     break;
             if (dup):
                 continue
+            # Add element to seen and return lists
             seen.append(e)
             ret.append(e)
         return ret
