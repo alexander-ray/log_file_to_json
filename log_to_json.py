@@ -32,7 +32,7 @@ def main():
                 except ValueError:
                     raise ValueError("Error: Invalid level specifier")
         if (not file_included):
-            raise RuntimeError("Error: filename argument required")
+            raise RuntimeError("Error: filename argument required. \nSpecify file path with -f. \nSpecify minimum level with -l. \nSpecify no repeated messages with -d.")
     except Exception as e:
         print(e)
         sys.exit(2)
