@@ -49,6 +49,7 @@ class Json_Parser:
                 if (not fields[4].isdigit()):
                     raise RuntimeError("Error: Invalid line number")
                 tmp = int(fields[4])
+                # Ensure not 0
                 if (tmp <= 0):
                     raise RuntimeError("Error: Invalid line number")
                 values.append(tmp)
