@@ -24,3 +24,10 @@ Instead of using the normal python `unittest` framework, I chose to use a lightw
 * I assume that the different log sections will be separated by one or more spaces, where all numbers of spaces >1 are treated equally.
   * Furthermore, I do not maintain spacing in the log message. E.g. "Spacing &nbsp; &nbsp; &nbsp; test" and "Spacing test" will be considered equal and output as "Spacing test".
 * I assume the filenames in the log messages are valid. Technically, each OS has a couple invalid filename characters as well as a character limit, but I chose to assume validity.
+
+### Example program output
+`alexray$ python3 log_to_json.py -l TRACE -d -f ./testing/test_ok_complicated.txt
+{"level": "INFO", "timestamp": "2017-09-01 13:57:29", "file": "index.go", "line": 125, "message": "Starting search"}
+{"level": "ERROR", "timestamp": "2017-09-01 13:57:29", "file": "index.go", "line": 125, "message": "Starting search"}
+{"level": "INFO", "timestamp": "2017-09-01 13:57:29", "file": "index.go", "line": 125, "message": "Starting sch"}
+{"level": "TRACE", "timestamp": "2017-09-01 14:57:29", "file": "index.go", "line": 125998473, "message": "Starting sch"}`
