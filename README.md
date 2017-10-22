@@ -21,7 +21,7 @@
 ### Testing overview
 Instead of using the normal python `unittest` framework, I chose to use a lightweight shell script for testing. I chose this testing route because a shell script makes testing the full program (including command line arguments) much more simple in structure and amount of code. This shell script compares command output with the contents of a `*.ans` file using `diff`. If the outputs are the same, nothing is printed; if the outputs are different, `diff` shows exactly what is different (just like `unittest` does). 
 
-I am reasonably confident my solution works as intended. It is important to note that my tests are not comprehensive; in the interest of time, 
+I am reasonably confident my solution works as intended. I'm certain my program meets the requirements specified and will function correctly in reasonably expected scenarios. Undoubtedly corner cases exist in which the program would fail, because the tests are by no means comprehensive. Given additional time, additional tests could be created to increase the confidence level.
 
 ### Assumptions
 * I assume that the different log sections will be separated by one or more spaces, where all numbers of spaces >1 are treated equally.
