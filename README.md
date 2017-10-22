@@ -18,9 +18,9 @@
   * I used the `json` library for the `json.dumps()` function, which makes it easy to convert & print json. Furthermore, `json.dumps()` prints python dictionaries as JSON. I could have simply printed the dictionaries mostly as-is, but the json library provides nice "pretty-print" options that are useful for debugging.
   
 ### Testing overview
-Instead of using the normal python `unittest` framework, I chose to use a lightweight shell script for testing. This shell script compares command output with the contents of a `*.ans` file using `diff`. If the outputs are the same, nothing is printed; if the outputs are different, `diff` shows exactly what is different (just like `unittest` does). I chose this testing route because a shell script makes testing the full program (including command line arguments) much more simple in structure and amount of code.
+Instead of using the normal python `unittest` framework, I chose to use a lightweight shell script for testing. I chose this testing route because a shell script makes testing the full program (including command line arguments) much more simple in structure and amount of code. This shell script compares command output with the contents of a `*.ans` file using `diff`. If the outputs are the same, nothing is printed; if the outputs are different, `diff` shows exactly what is different (just like `unittest` does). 
 
 ### Assumptions
 * I assume that the different log sections will be separated by one or more spaces, where all numbers of spaces >1 are treated equally.
-  * Furthermore, I do not maintain spacing in the log message. E.g. "Spacing &nbsp; &nbsp; &nbsp; test" and "Spacing test" will be considered equal and outputted as "Spacing test".
+  * Furthermore, I do not maintain spacing in the log message. E.g. "Spacing &nbsp; &nbsp; &nbsp; test" and "Spacing test" will be considered equal and output as "Spacing test".
 * I assume the filenames in the log messages are valid. Technically, each OS has a couple invalid filename characters as well as a character limit, but I chose to assume validity.
