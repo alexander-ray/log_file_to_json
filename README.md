@@ -23,3 +23,4 @@ Instead of using the normal python `unittest` framework, I chose to use a lightw
 ### Assumptions
 * I assume that the different log sections will be separated by one or more spaces, where all numbers of spaces >1 are treated equally.
   * Furthermore, I do not maintain spacing in the log message. E.g. "Spacing &nbsp; &nbsp; &nbsp; test" and "Spacing test" will be considered equal and outputted as "Spacing test".
+* I assume the filenames in the log messages are valid. Technically, each OS has a couple invalid filename characters as well as a character limit, but I chose to assume validity.
